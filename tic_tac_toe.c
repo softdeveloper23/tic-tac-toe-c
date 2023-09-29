@@ -35,3 +35,38 @@ void display_board(char board[3][3])
     }
     printf("\n");
 }
+
+// A function to take user input and validate the input
+int get_move(char player, int *row, int *col)
+{
+    printf("Player %c, enter your move (row and column, 1-3): ", player);
+    scanf("%d %d", row, col);
+
+    // Validate the input
+    if (*row < 1 || *row > 3 || *col < 1 || *col > 3)
+    {
+        printf("Invalid input. Please enter row and column numbers between 1 and 3.\n");
+        return 0;
+    }
+
+    // Adjust indices to start from 0
+    (*row)--;
+    (*col)--;
+
+    return 1;
+}
+
+// Udpate the board with the player's move
+int update_board(char board[3][3], int row, int col, char player)
+{
+    if (board[row][col] == ' ')
+    {
+        board[row][col] = player;
+        return 1;
+    }
+    else
+    {
+        printf("Cell already occupied. Choose another cell.\n");
+        return 0;
+    }
+}
