@@ -55,3 +55,18 @@ int get_move(char player, int *row, int *col)
 
     return 1;
 }
+
+// Udpate the board with the player's move
+int update_board(char board[3][3], int row, int col, char player)
+{
+    if (board[row][col] == ' ')
+    {
+        board[row][col] = player;
+        return 1;
+    }
+    else
+    {
+        printf("Cell already occupied. Choose another cell.\n");
+        return 0;
+    }
+}
