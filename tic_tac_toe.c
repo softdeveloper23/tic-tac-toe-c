@@ -10,6 +10,9 @@ int main()
         {' ', ' ', ' '}, // row 1
         {' ', ' ', ' '}  // row 2
     };
+
+    // Display the board
+    display_board(board);
 }
 
 // A function to display the current state of the game board
