@@ -70,3 +70,26 @@ int update_board(char board[3][3], int row, int col, char player)
         return 0;
     }
 }
+
+// Check for a winner
+char check_winner(char board[3][3])
+{
+    for (int i = 0; i < 3; i++)
+    {
+        // Check horizontal and vertical lines
+        if ((board[i][0] == board[i][1] && board[i][1] == board[i][2] && board[i][0] != ' ') ||
+            (board[0][i] == board[1][i] && board[1][i] == board[2][i] && board[0][i] != ' '))
+        {
+            return board[i][i];
+        }
+    }
+
+    // Check diagonals
+    if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] != ' ') ||
+        (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != ' '))
+    {
+        return board[1][1];
+    }
+
+    return ' ';
+}
