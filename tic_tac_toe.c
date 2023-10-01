@@ -93,3 +93,9 @@ char check_winner(char board[3][3])
 
     return ' ';
 }
+
+// Switch player
+char switch_player(char player)
+{
+    return (player == 'X') ? 'O' : 'X';
+}
