@@ -16,6 +16,22 @@ int main()
     int row, col;
     char winner = ' ';
 
+    // While loop to keep the game going until there is a winner or the board is full
+    while (winner == ' ' && moves < 9)
+    {
+        display_board(board);
+
+        int valid_move = 0;
+        while (!valid_move)
+        {
+            valid_move = get_move(player, &row, &col) && update_board(board, row, col, player);
+        }
+
+        winner = check_winner(board);
+        player = switch_player(player);
+        moves++;
+    }
+
     // Display the board
     display_board(board);
 }
