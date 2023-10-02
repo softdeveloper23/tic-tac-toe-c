@@ -11,6 +11,11 @@ int main()
         {' ', ' ', ' '}  // row 2
     };
 
+    char player = 'X';
+    int moves = 0;
+    int row, col;
+    char winner = ' ';
+
     // Display the board
     display_board(board);
 }
