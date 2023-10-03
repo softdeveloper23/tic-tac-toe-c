@@ -34,6 +34,16 @@ int main()
 
     // Display the board
     display_board(board);
+
+    // Display the winner
+    if (winner != ' ')
+    {
+        printf("Player %c wins!\n", switch_player(player));
+    }
+    else
+    {
+        printf("It's a draw!\n");
+    }
 }
 
 // A function to display the current state of the game board
