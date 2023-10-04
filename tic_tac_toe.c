@@ -1,5 +1,11 @@
 #include <stdio.h>
 
+void display_board(char board[3][3]);
+int get_move(char player, int *row, int *col);
+int update_board(char board[3][3], int row, int col, char player);
+char check_winner(char board[3][3]);
+char switch_player(char player);
+
 // Tic, Tac, Toe
 
 int main()
@@ -51,7 +57,7 @@ void display_board(char board[3][3])
 {
     for (int i = 0; i < 3; i++)
     {
-        for (int j = 0; i < 3; j++)
+        for (int j = 0; j < 3; j++)
         {
             printf("%c", board[i][j]);
             if (j < 2)
